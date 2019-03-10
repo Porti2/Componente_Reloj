@@ -1,0 +1,1 @@
+C:\Users\josel\source\repos\ComponenteReloj\ComponenteReloj\ComponenteReloj.csproj;x64

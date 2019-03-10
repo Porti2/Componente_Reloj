@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="ComponenteReloj.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ComponenteReloj"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Componente="using:ComponenteReloj.Componente"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid BorderBrush="DarkCyan" BorderThickness="5" Background="White" Width="500" Height="500" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+
+            <StackPanel>
+                <TextBlock Text="Seleccione el Continente:" FontSize="18" FontWeight="Bold" Margin="10,20,0,0"/>
+                <ComboBox x:ConnectionId='2' x:Name="continente" PlaceholderText="Continente" Margin="10,5,0,0"  Width="120"                                               />
+
+                <TextBlock Text="Seleccione la Ciudad:" FontSize="18" FontWeight="Bold" Margin="10,20,0,0"/>
+                <ComboBox x:ConnectionId='3' x:Name="ciudad" PlaceholderText="Ciudad" Margin="10,5,0,0"  Width="120" />
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:ConnectionId='5' x:Name="pedirHora" Content="Pedir Hora" HorizontalAlignment="Left" Margin="10,10,0,0"                        />
+                    <Button x:ConnectionId='6' x:Name="recargar" Content="Recargar Hora" HorizontalAlignment="Left" Margin="20,10,0,0"                        />
+                </StackPanel>
+
+                <TextBlock Text="¿Quieres saber la hora actual en tu localización?" FontSize="18" FontWeight="Bold" Margin="10,20,0,0"/>
+                <Button x:ConnectionId='4' x:Name="actual" Content="Hora Actual" HorizontalAlignment="Left" Margin="10,10,0,0"                     />
+
+            </StackPanel>
+            
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold">
+                Nota: Este Componente realiza una conexion con una API que te devuelve 
+                <LineBreak/>
+                la hora de la ciudad seleccionada y te la muestra. 
+            </TextBlock>
+        </Grid>
+        <Componente:Reloj Grid.Column="1" Height="600" Width="600" VerticalAlignment="Center" HorizontalAlignment="Center"></Componente:Reloj>
+    </Grid>
+</Page>
+
